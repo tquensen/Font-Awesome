@@ -46,15 +46,38 @@
         vertical-align: middle;
         text-align: center;
         width: 1em;
-        margin-right: 0.2em;
+        margin-right: 0.5em;
     }
 }
 
-// makes the font 33% larger relative to the icon container
-.icon-large {
+// show only the icon / hide the text after the icon (text must be wrapped in a <span>)
+.icon-replace {
+    & + span {
+        display: inline-block;
+        overflow: hidden;
+        width: 0;
+    }
+}
+
+// makes the font larger relative to the icon container
+.icon-l {
     &:before {
         font-size: 1.333333333em;
         line-height: 0.75em;
+    }
+}
+
+.icon-xl {
+    &:before {
+        font-size: 1.5em;
+        line-height: 0.666666667em;
+    }
+}
+
+.icon-xxl {
+    &:before {
+        font-size: 2em;
+        line-height: 0.5em;
     }
 }
 
@@ -71,13 +94,13 @@
     }
 }
 
-.icon-margin(@margin: 0.2em) {
+.icon-margin(@margin: 0.5em) {
     &:before {
         margin-right: @margin;
     }
 }
 
-.icon-full(@type, @size: 1, @color: inherit, @margin: 0.2em) {
+.icon-full(@type, @size: 1, @color: inherit, @margin: 0.5em) {
     &:before {
         font-family: FontAwesome;
         font-weight: normal;
